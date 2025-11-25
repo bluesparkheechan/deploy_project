@@ -43,7 +43,7 @@ jobs:
 
     # 서버에 접속하여 배포 실행 
     # scp 작은 규모의 파일을 옮기는것은 scp로 가능하다. 키를 기반으로 접속, 포트정보, 어느 파일을 어디로 옮길것인지 경로 frontapp/dist가 출발지점 ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/${{ secrets.SSH_USER }}/deploy_project/server/public/ 이게 목표지점
-    # ssh 명령어를 실행하는것임. ||<<<이건 or임 restart가 안되면 이거 실행하는거임.
+    # ssh 명령어를 실행하는것임. ||<<<이건 or임 restart가 안되면 이거 실행하는거임.  "<<'EOF'"  이건 EOF라는 단어가 나올 때까지 명령 종료하지마라는 의미임
     - name: SSH into server and deploy
       run: |
         scp   -r -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -P ${{ secrets.SSH_PORT }} frontapp/dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/${{ secrets.SSH_USER }}/deploy_project/backend/public/
