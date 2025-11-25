@@ -25,7 +25,7 @@ if (process.argv[2] == "prod") {
   apiPath = "/api"; //api 경로를 /api로 설정
 }
 app.get(`${apiPath}/board`, (req, res) => {
-  res.send({ title: "깃허브 액션 배포 테스트중!!!!" });
+  res.send({ title: "나는 왜 안바뀌는가" });
 });
 
 // app.get("/board", (req, res) => {
